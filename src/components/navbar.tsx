@@ -15,8 +15,10 @@ export default function Navbar() {
             <a href="">FAQ</a>
           </div>
           <div className="flex gap-4 items-center">
-            <Button className="bg-blue-400">Start a contribution</Button>
-            <Button className="bg-white border rounded-sm px-6 text-black hover:bg-gray-100">
+            <Button className="bg-blue-400 rounded-3xl">
+              Start a contribution
+            </Button>
+            <Button className="bg-white border rounded-3xl px-6 text-black hover:bg-gray-100">
               Log in
             </Button>
           </div>
