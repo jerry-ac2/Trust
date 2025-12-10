@@ -1,11 +1,13 @@
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
+import { useNavigate } from "react-router-dom";
 
 export default function Register({
   setIsLogin,
 }: {
   setIsLogin: (value: boolean) => void;
 }) {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-2 justify-center items-center">
@@ -60,7 +62,10 @@ export default function Register({
           />
         </div>
 
-        <Button className="w-full bg-[#083E9E] hover:bg-[#062f7a] text-white font-bold h-12 rounded-xl mt-4 text-lg">
+        <Button
+          className="w-full bg-[#083E9E] hover:bg-[#062f7a] cursor-pointer text-white font-bold h-10 rounded-xl mt-4 text-lg"
+          onClick={() => navigate("/auth/otp-verify")}
+        >
           Create Account
         </Button>
       </form>

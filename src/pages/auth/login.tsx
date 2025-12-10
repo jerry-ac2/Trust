@@ -8,7 +8,7 @@ export default function Login({
 }) {
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col items-center justify-center gap-2">
         <h1 className="text-3xl font-bold text-[#083E9E]">Login</h1>
         <p className="text-gray-500 text-sm">Securely login to your account</p>
       </div>
@@ -52,7 +52,7 @@ export default function Login({
           </a>
         </div>
 
-        <Button className="w-full bg-[#083E9E] hover:bg-[#062f7a] text-white font-bold h-14 rounded-xl mt-2 text-lg">
+        <Button className="w-full bg-[#083E9E] hover:bg-[#062f7a] text-white font-bold h-10 cursor-pointer rounded-xl mt-2 text-lg">
           Log In
         </Button>
       </form>
