@@ -3,8 +3,10 @@ import { IoIosWallet } from "react-icons/io";
 import { MdVerifiedUser } from "react-icons/md";
 import { MdHowToVote } from "react-icons/md";
 import { Button } from "../components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export default function Welcome() {
+  const navigate = useNavigate();
   return (
     <div className="w-full overflow-x-hidden min-h-screen items-center justify-center bg-[#F2F5F8] flex flex-col">
       <div className="bg-white p-8 md:p-6 items-center justify-center rounded-[2.5rem] flex flex-col gap-8 w-full max-w-[990px] shadow-sm border border-gray-100">
@@ -31,7 +33,10 @@ export default function Welcome() {
             welcome={true}
           />
         </div>
-        <Button className="w-3/12 cursor-pointer rounded-3xl p-4 bg-blue-500">
+        <Button
+          className="w-3/12 cursor-pointer rounded-3xl p-4 bg-blue-500"
+          onClick={() => navigate("/dashboard")}
+        >
           Explore your dashboard
         </Button>
         <p className="underline">Learn more</p>
