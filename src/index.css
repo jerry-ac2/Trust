@@ -74,6 +74,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Safe area for mobile bottom navigation */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
 a {
   font-weight: 500;
   color: black;
