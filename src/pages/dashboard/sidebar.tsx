@@ -1,53 +1,76 @@
-import { MdCampaign, MdDashboard, MdSettings, MdWallet } from "react-icons/md";
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const nav = [
   {
-    name: "Dashboard",
+    name: "Overview",
     href: "/dashboard",
-    icon: <MdDashboard className="w-6 h-6" />,
   },
   {
-    name: "Campaigns",
-    href: "/dashboard/campaigns",
-    icon: <MdCampaign className="w-6 h-6" />,
+    name: "Governance",
+    href: "/dashboard/",
   },
   {
-    name: "Wallet",
-    href: "/dashboard/wallet",
-    icon: <MdWallet className="w-6 h-6" />,
+    name: "Pooled Funds",
+    href: "/dashboard/",
   },
   {
-    name: "Settings",
-    href: "/dashboard/settings",
-    icon: <MdSettings className="w-6 h-6" />,
+    name: "Activity",
+    href: "/dashboard/",
   },
 ];
 
 export default function Sidebar() {
-  //handle active route
   const location = useLocation();
+  const navigate = useNavigate();
+
   return (
-    <div className="flex flex-col  w-74 p-3 border-r border-gray-300 bg-gray-100 gap-12 h-svh">
-      <div className="flex items-center gap-2">
-        <img src="/logo.png" className="h-12 w-14" alt="logo" />
-        <span className="text-2xl font-bold">Trust</span>
+    <aside className="flex flex-col w-64 bg-[#faf9f7] h-screen sticky top-0 border-r border-[#e8e6e1]">
+      {/* Header */}
+      <div className="p-6 pb-8">
+        <div className="cursor-pointer" onClick={() => navigate("/")}>
+          <span className="font-headline text-2xl text-[#1a1a1a]">Trust</span>
+        </div>
       </div>
-      <div className="flex flex-col w-full gap-6">
-        {nav.map((item) => (
-          <Link to={item.href} key={item.name}>
-            <div
-              className={`flex flex-row p-2 items-center gap-4 rounded-md ${
-                location.pathname == item.href && "bg-blue-400 text-white"
-              }`}
-            >
-              <span>{item.icon}</span>
-              <p className="text-md font-normal">{item.name}</p>
-            </div>
-          </Link>
-        ))}
+
+      {/* Navigation */}
+      <nav className="flex-1 px-4">
+        <ul className="space-y-1">
+          {nav.map((item) => {
+            const isActive =
+              location.pathname === item.href ||
+              (item.href !== "/dashboard" &&
+                location.pathname.startsWith(item.href));
+
+            return (
+              <li key={item.name}>
+                <div
+                  onClick={() => navigate(item.href)}
+                  className={`block px-4 py-3 text-sm font-medium rounded-sm transition-colors duration-200 ${
+                    isActive
+                      ? "bg-[#1a1a1a] text-white"
+                      : "text-[#5a5a5a] hover:text-[#1a1a1a] hover:bg-[#e8e6e1]"
+                  }`}
+                >
+                  {item.name}
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+
+      {/* User */}
+      <div className="p-4 border-t border-[#e8e6e1]">
+        <div className="flex items-center gap-3 px-2 py-3 cursor-pointer rounded-sm hover:bg-[#e8e6e1] transition-colors">
+          <div className="w-9 h-9 rounded-full bg-[#2d5a4a] flex items-center justify-center text-white text-sm font-medium">
+            JD
+          </div>
+          <div className="flex flex-col">
+            <span className="text-sm font-medium text-[#1a1a1a]">John Doe</span>
+            <span className="text-xs text-[#9a9a9a]">Contributor</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </aside>
   );
 }
