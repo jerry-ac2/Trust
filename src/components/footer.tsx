@@ -1,28 +1,77 @@
 export default function Footer() {
   return (
-    <footer className="py-16 bg-[#faf9f7] border-t border-[#e8e6e1]">
+    <footer className="py-16 bg-[#F8FAFC] border-t border-[#E2E8F0]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <span className="font-headline text-2xl text-[#1a1a1a]">Trust</span>
-            <p className="text-sm text-[#5a5a5a] max-w-xs">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-[#22C55E] flex items-center justify-center">
+                <svg
+                  className="w-4 h-4 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <span className="font-headline text-2xl text-[#0F172A]">
+                Trust
+              </span>
+            </div>
+            <p className="text-sm text-[#475569] max-w-xs">
               Shared wallets for groups who value transparency and collective
               control.
             </p>
+
+            {/* Trust badges */}
+            <div className="flex flex-wrap gap-3 pt-4">
+              <span className="badge-available px-3 py-1 rounded-full text-xs font-medium inline-flex items-center gap-1">
+                <svg
+                  className="w-3 h-3"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                Bank-level security
+              </span>
+              <span className="badge-escrow px-3 py-1 rounded-full text-xs font-medium inline-flex items-center gap-1">
+                <svg
+                  className="w-3 h-3"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                WCAG AA Compliant
+              </span>
+            </div>
           </div>
 
           {/* Links */}
           <div className="flex flex-wrap gap-16 lg:gap-24">
             <div className="space-y-4">
-              <h4 className="text-xs font-medium text-[#9a9a9a] uppercase tracking-wider">
+              <h4 className="text-xs font-medium text-[#64748B] uppercase tracking-wider">
                 Product
               </h4>
-              <ul className="space-y-3 text-sm text-[#5a5a5a]">
+              <ul className="space-y-3 text-sm text-[#475569]">
                 <li>
                   <a
                     href="#how-it-works"
-                    className="hover:text-[#1a1a1a] transition-colors"
+                    className="hover:text-[#22C55E] transition-colors"
                   >
                     How it works
                   </a>
@@ -30,7 +79,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#features"
-                    className="hover:text-[#1a1a1a] transition-colors"
+                    className="hover:text-[#22C55E] transition-colors"
                   >
                     Features
                   </a>
@@ -38,22 +87,30 @@ export default function Footer() {
                 <li>
                   <a
                     href="#use-cases"
-                    className="hover:text-[#1a1a1a] transition-colors"
+                    className="hover:text-[#22C55E] transition-colors"
                   >
                     Use cases
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="hover:text-[#22C55E] transition-colors"
+                  >
+                    Security
                   </a>
                 </li>
               </ul>
             </div>
             <div className="space-y-4">
-              <h4 className="text-xs font-medium text-[#9a9a9a] uppercase tracking-wider">
+              <h4 className="text-xs font-medium text-[#64748B] uppercase tracking-wider">
                 Company
               </h4>
-              <ul className="space-y-3 text-sm text-[#5a5a5a]">
+              <ul className="space-y-3 text-sm text-[#475569]">
                 <li>
                   <a
                     href="#"
-                    className="hover:text-[#1a1a1a] transition-colors"
+                    className="hover:text-[#22C55E] transition-colors"
                   >
                     About
                   </a>
@@ -61,7 +118,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-[#1a1a1a] transition-colors"
+                    className="hover:text-[#22C55E] transition-colors"
                   >
                     Blog
                   </a>
@@ -69,7 +126,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-[#1a1a1a] transition-colors"
+                    className="hover:text-[#22C55E] transition-colors"
                   >
                     Contact
                   </a>
@@ -77,14 +134,14 @@ export default function Footer() {
               </ul>
             </div>
             <div className="space-y-4">
-              <h4 className="text-xs font-medium text-[#9a9a9a] uppercase tracking-wider">
+              <h4 className="text-xs font-medium text-[#64748B] uppercase tracking-wider">
                 Legal
               </h4>
-              <ul className="space-y-3 text-sm text-[#5a5a5a]">
+              <ul className="space-y-3 text-sm text-[#475569]">
                 <li>
                   <a
                     href="#"
-                    className="hover:text-[#1a1a1a] transition-colors"
+                    className="hover:text-[#22C55E] transition-colors"
                   >
                     Privacy
                   </a>
@@ -92,9 +149,17 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-[#1a1a1a] transition-colors"
+                    className="hover:text-[#22C55E] transition-colors"
                   >
                     Terms
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="hover:text-[#22C55E] transition-colors"
+                  >
+                    Compliance
                   </a>
                 </li>
               </ul>
@@ -103,17 +168,17 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-16 pt-8 border-t border-[#e8e6e1] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <p className="text-sm text-[#9a9a9a]">
+        <div className="mt-16 pt-8 border-t border-[#E2E8F0] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <p className="text-sm text-[#64748B]">
             © {new Date().getFullYear()} Trust. All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-[#9a9a9a]">
-            <a href="#" className="hover:text-[#1a1a1a] transition-colors">
+          <div className="flex items-center gap-6 text-[#64748B]">
+            <a href="#" className="hover:text-[#22C55E] transition-colors">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
               </svg>
             </a>
-            <a href="#" className="hover:text-[#1a1a1a] transition-colors">
+            <a href="#" className="hover:text-[#22C55E] transition-colors">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   fillRule="evenodd"
@@ -122,7 +187,7 @@ export default function Footer() {
                 />
               </svg>
             </a>
-            <a href="#" className="hover:text-[#1a1a1a] transition-colors">
+            <a href="#" className="hover:text-[#22C55E] transition-colors">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path
                   fillRule="evenodd"

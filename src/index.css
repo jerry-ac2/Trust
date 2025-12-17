@@ -19,47 +19,80 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Color Palette - Refined */
-  --charcoal: #1a1a1a;
-  --charcoal-soft: #2d2d2d;
-  --off-white: #faf9f7;
-  --warm-grey: #e8e6e1;
-  --muted-grey: #9a9a9a;
-  --accent-green: #2d5a4a;
-  --accent-green-light: #3d7a64;
+  /* ============================================
+     PAYMENTS-FIRST FINTECH COLOR SYSTEM
+     ============================================ */
+
+  /* Primary Palette */
+  --primary-green: #5b7b67;
+  --primary-green-hover: #5b7b69;
+  --primary-contrast: #ffffff;
+  --secondary-dark: #0f172a;
+  --accent-blue: #3b82f6;
+
+  /* Wallet & Funds Colors */
+  --balance-available: #16a34a;
+  --balance-pending: #facc15;
+  --balance-escrow: #2563eb;
+  --balance-locked: #64748b;
+
+  /* Background Colors */
+  --bg-main: #ffffff;
+  --bg-surface: #f8fafc;
+  --bg-highlight: #ecfdf3;
+
+  /* Status Colors */
+  --status-success: #16a34a;
+  --status-warning: #eab308;
+  --status-error: #dc2626;
+  --status-info: #2563eb;
+
+  /* Legacy colors (maintaining compatibility) */
+  --charcoal: #0f172a;
+  --charcoal-soft: #1e293b;
+  --off-white: #f8fafc;
+  --warm-grey: #e2e8f0;
+  --muted-grey: #64748b;
+  --accent-green: #22c55e;
+  --accent-green-light: #4ade80;
 
   --radius: 0.5rem;
-  --background: var(--off-white);
+  --background: var(--bg-main);
   --foreground: var(--charcoal);
   --card: #ffffff;
   --card-foreground: var(--charcoal);
   --popover: #ffffff;
   --popover-foreground: var(--charcoal);
-  --primary: var(--charcoal);
-  --primary-foreground: var(--off-white);
+  --primary: var(--primary-green);
+  --primary-foreground: var(--primary-contrast);
   --secondary: var(--warm-grey);
   --secondary-foreground: var(--charcoal);
   --muted: var(--warm-grey);
   --muted-foreground: var(--muted-grey);
-  --accent: var(--accent-green);
+  --accent: var(--accent-blue);
   --accent-foreground: #ffffff;
-  --destructive: #b54a4a;
-  --border: #e0e0e0;
-  --input: #e0e0e0;
-  --ring: var(--charcoal);
-  --chart-1: var(--accent-green);
-  --chart-2: #4a6fa5;
-  --chart-3: #7a5195;
-  --chart-4: #c9a227;
-  --chart-5: #b54a4a;
+  --destructive: var(--status-error);
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: var(--primary-green);
+  --chart-1: var(--primary-green);
+  --chart-2: var(--accent-blue);
+  --chart-3: #8b5cf6;
+  --chart-4: var(--balance-pending);
+  --chart-5: var(--status-error);
   --sidebar: #ffffff;
   --sidebar-foreground: var(--charcoal);
-  --sidebar-primary: var(--charcoal);
+  --sidebar-primary: var(--secondary-dark);
   --sidebar-primary-foreground: var(--off-white);
   --sidebar-accent: var(--warm-grey);
   --sidebar-accent-foreground: var(--charcoal);
-  --sidebar-border: #e0e0e0;
-  --sidebar-ring: var(--charcoal);
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: var(--primary-green);
+
+  /* Animation timing */
+  --transition-fast: 120ms;
+  --transition-normal: 200ms;
+  --transition-slow: 300ms;
 }
 
 /* Headline utility */
@@ -81,11 +114,12 @@ html {
 
 a {
   font-weight: 500;
-  color: black;
+  color: var(--charcoal);
   text-decoration: inherit;
+  transition: color var(--transition-fast) ease;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--primary-green);
 }
 
 body {
@@ -175,17 +209,304 @@ body {
   }
 }
 
-/* Custom Animations - Restrained */
+/* ============================================
+   PAYMENTS-FIRST ANIMATION SYSTEM
+   ============================================ */
+
+/* Float animation - subtle and purposeful */
 @keyframes float {
   0%,
   100% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-8px);
   }
 }
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse animation for pending states */
+@keyframes pulse-subtle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Progress animation for loading states */
+@keyframes progress-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-progress {
+  background: linear-gradient(
+    90deg,
+    var(--balance-pending) 0%,
+    var(--primary-green) 50%,
+    var(--balance-pending) 100%
+  );
+  background-size: 200% 100%;
+  animation: progress-flow 1.5s ease-in-out infinite;
+}
+
+/* Escrow lock animation */
+@keyframes lock-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(37, 99, 235, 0);
+  }
+}
+
+.animate-escrow-lock {
+  animation: lock-pulse 2s ease-in-out infinite;
+}
+
+/* Success checkmark animation */
+@keyframes check-appear {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-check {
+  animation: check-appear 0.3s ease-out forwards;
+}
+
+/* Funds movement animation */
+@keyframes funds-flow {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+}
+
+.animate-funds-flow {
+  animation: funds-flow 1.2s ease-in-out infinite;
+}
+
+/* ============================================
+   MICRO-INTERACTION UTILITIES
+   ============================================ */
+
+/* Button press effect */
+.btn-press {
+  transition: transform var(--transition-fast) ease,
+    box-shadow var(--transition-fast) ease,
+    background-color var(--transition-fast) ease;
+}
+
+.btn-press:active {
+  transform: scale(0.97);
+}
+
+/* Card hover lift effect */
+.card-lift {
+  transition: transform var(--transition-normal) ease,
+    box-shadow var(--transition-normal) ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1),
+    0 4px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Wallet card specific hover */
+.wallet-card-hover {
+  transition: transform var(--transition-normal) ease,
+    box-shadow var(--transition-normal) ease,
+    border-color var(--transition-normal) ease;
+}
+
+.wallet-card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -8px rgba(34, 197, 94, 0.15),
+    0 4px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: var(--primary-green);
+}
+
+/* Interactive element focus ring */
+.focus-ring {
+  outline: none;
+  transition: box-shadow var(--transition-fast) ease;
+}
+
+.focus-ring:focus-visible {
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.4);
+}
+
+/* ============================================
+   FUND STATE INDICATOR CLASSES
+   ============================================ */
+
+.fund-available {
+  color: var(--balance-available);
+}
+
+.fund-pending {
+  color: var(--balance-pending);
+}
+
+.fund-escrow {
+  color: var(--balance-escrow);
+}
+
+.fund-locked {
+  color: var(--balance-locked);
+}
+
+/* Fund state badges */
+.badge-available {
+  background-color: var(--bg-highlight);
+  color: var(--balance-available);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.badge-pending {
+  background-color: #fefce8;
+  color: #a16207;
+  border: 1px solid rgba(250, 204, 21, 0.3);
+}
+
+.badge-escrow {
+  background-color: #eff6ff;
+  color: var(--balance-escrow);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.badge-locked {
+  background-color: #f8fafc;
+  color: var(--balance-locked);
+  border: 1px solid rgba(100, 116, 139, 0.2);
+}
+
+/* ============================================
+   CTA BUTTON STYLES
+   ============================================ */
+
+.cta-primary {
+  background-color: var(--primary-green);
+  color: var(--primary-contrast);
+  font-weight: 500;
+  transition: background-color var(--transition-fast) ease,
+    transform var(--transition-fast) ease,
+    box-shadow var(--transition-fast) ease;
+}
+
+.cta-primary:hover {
+  background-color: var(--primary-green-hover);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.cta-primary:active {
+  transform: scale(0.98);
+}
+
+.cta-secondary {
+  background-color: var(--secondary-dark);
+  color: var(--primary-contrast);
+  font-weight: 500;
+  transition: background-color var(--transition-fast) ease,
+    transform var(--transition-fast) ease;
+}
+
+.cta-secondary:hover {
+  background-color: #1e293b;
+}
+
+.cta-secondary:active {
+  transform: scale(0.98);
+}
+
+/* ============================================
+   SKELETON LOADING STATES
+   ============================================ */
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-surface) 25%,
+    #e2e8f0 37%,
+    var(--bg-surface) 63%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.4s ease infinite;
+}
+
+/* ============================================
+   STATUS INDICATORS
+   ============================================ */
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-dot-success {
+  background-color: var(--status-success);
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2);
+}
+
+.status-dot-warning {
+  background-color: var(--status-warning);
+  box-shadow: 0 0 0 2px rgba(234, 179, 8, 0.2);
+}
+
+.status-dot-error {
+  background-color: var(--status-error);
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
+}
+
+.status-dot-info {
+  background-color: var(--status-info);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.status-dot-pending {
+  background-color: var(--balance-pending);
+  box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.2);
+  animation: pulse-subtle 2s ease-in-out infinite;
 }
