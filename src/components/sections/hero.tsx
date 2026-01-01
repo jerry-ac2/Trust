@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import HeroIcon from "../heroIcon";
 
 export default function Hero() {
   const navigate = useNavigate();
@@ -37,7 +36,7 @@ export default function Hero() {
             <div className="flex flex-col items-center justify-center sm:flex-row gap-4 pt-4">
               <button
                 onClick={() => navigate("/auth")}
-                className="px-8 py-4 bg-[#5b7b67] text-green-500 rounded-lg text-base font-medium text-shadow-2xs btn-press"
+                className="px-8 py-4 bg-[#5b7b67] text-[#FFFACD] rounded-lg text-base font-medium text-shadow-2xs btn-press"
               >
                 Start a Trust
               </button>
