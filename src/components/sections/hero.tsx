@@ -4,10 +4,9 @@ export default function Hero() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-screen flex items-center bg-white">
-      {/* Subtle grain texture overlay */}
+    <section className="relative min-h-screen flex items-center bg-green-50">
       <div
-        className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        className="absolute inset-0 opacity-[0.1] pointer-events-none"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
         }}
@@ -25,7 +24,7 @@ export default function Hero() {
             {/* Headline - Editorial serif */}
             <h1 className="font-headline text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.1] text-[#0F172A]">
               Money moves when <br className="hidden lg:block" />
-              <em className="not-italic text-[#22C55E]">everyone</em> agrees.
+              everyone agrees.
             </h1>
 
             {/* Subtext - Warm, clear, no jargon */}
@@ -146,7 +145,7 @@ export default function Hero() {
                 style={{ animationDelay: "1s" }}
               >
                 <svg
-                  className="w-4 h-4 text-[#3B82F6]"
+                  className="w-4 h-4 text-black"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -156,7 +155,7 @@ export default function Hero() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-xs text-[#3B82F6] font-medium">
+                <span className="text-xs text-black font-medium">
                   Escrow active
                 </span>
               </div>

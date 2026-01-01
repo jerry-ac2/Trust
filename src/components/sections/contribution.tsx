@@ -1,38 +1,22 @@
 export default function Features() {
   return (
-    <section id="features" className="py-32 lg:py-40 bg-white">
+    <section id="features" className=" lg:py-20 cta-primary">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="max-w-2xl mb-20">
-          <p className="text-sm tracking-widest uppercase text-[#64748B] font-medium mb-4">
+          <p className="text-sm tracking-widest uppercase text-white font-xl mb-4">
             Core features
           </p>
-          <h2 className="font-headline text-[clamp(2rem,4vw,3rem)] leading-[1.15] text-[#0F172A]">
-            Built for groups who <br className="hidden sm:block" />
-            value transparency
+          <h2 className="font-headline font-bold text-[clamp(3rem,7vw,3rem)] leading-[1.2] text-[#0F172A]">
+            Built for groups who value transparency
           </h2>
         </div>
 
         {/* Features - Asymmetric grid with payment-focused design */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-12">
           {/* Feature 1 - Shared Wallet */}
           <div className="group p-8 bg-[#F8FAFC] rounded-xl border border-[#E2E8F0] card-lift">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#22C55E] flex items-center justify-center flex-shrink-0">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-              </div>
               <div>
                 <h3 className="text-xl font-medium text-[#0F172A] mb-2">
                   Shared Wallet
@@ -50,23 +34,8 @@ export default function Features() {
           </div>
 
           {/* Feature 2 - Escrow Security */}
-          <div className="group p-8 bg-[#F8FAFC] rounded-xl border border-[#E2E8F0] card-lift lg:mt-12">
+          <div className="group p-8 bg-[#F8FAFC] rounded-xl border border-[#E2E8F0] card-lift">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#3B82F6] flex items-center justify-center flex-shrink-0">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                  />
-                </svg>
-              </div>
               <div>
                 <h3 className="text-xl font-medium text-[#0F172A] mb-2">
                   Escrow Protection
@@ -97,21 +66,6 @@ export default function Features() {
           {/* Feature 3 - Voting System */}
           <div className="group p-8 bg-[#F8FAFC] rounded-xl border border-[#E2E8F0] card-lift">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#22C55E] flex items-center justify-center flex-shrink-0">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
               <div>
                 <h3 className="text-xl font-medium text-[#0F172A] mb-2">
                   Democratic Withdrawals
@@ -137,29 +91,8 @@ export default function Features() {
           </div>
 
           {/* Feature 4 - Full Transparency */}
-          <div className="group p-8 bg-[#F8FAFC] rounded-xl border border-[#E2E8F0] card-lift lg:mt-12">
+          <div className="group p-8 bg-[#F8FAFC] rounded-xl border border-[#E2E8F0] card-lift">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#0F172A] flex items-center justify-center flex-shrink-0">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                  />
-                </svg>
-              </div>
               <div>
                 <h3 className="text-xl font-medium text-[#0F172A] mb-2">
                   Complete Visibility

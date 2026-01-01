@@ -391,20 +391,20 @@ body {
 /* Fund state badges */
 .badge-available {
   background-color: var(--bg-highlight);
-  color: var(--balance-available);
-  border: 1px solid rgba(22, 163, 74, 0.2);
+  color: #5b7b67;
+  border: 1px solid #5b7b67;
 }
 
 .badge-pending {
   background-color: #fefce8;
   color: #a16207;
-  border: 1px solid rgba(250, 204, 21, 0.3);
+  border: 1px solid #a16207;
 }
 
 .badge-escrow {
   background-color: #eff6ff;
-  color: var(--balance-escrow);
-  border: 1px solid rgba(37, 99, 235, 0.2);
+  color: #5b7b67;
+  border: 1px solid #5b7b67;
 }
 
 .badge-locked {

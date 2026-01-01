@@ -97,10 +97,10 @@ export default function HowItWorks() {
                 <div
                   className={`w-12 h-12 rounded-full flex items-center justify-center ${
                     index === 0
-                      ? "bg-[#ECFDF3] text-[#22C55E]"
+                      ? "bg-[#ECFDF3] text-[#5b7b67]"
                       : index === 1
-                      ? "bg-[#EFF6FF] text-[#3B82F6]"
-                      : "bg-[#ECFDF3] text-[#22C55E]"
+                      ? "bg-[#EFF6FF] text-[#5b7b67]"
+                      : "bg-[#ECFDF3] text-[#5b7b67]"
                   }`}
                 >
                   {step.icon}
