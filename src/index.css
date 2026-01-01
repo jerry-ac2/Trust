@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Ubuntu:wght@300;400;500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -8,6 +8,8 @@
   /* Typography */
   --font-headline: "DM Serif Display", Georgia, serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-ubuntu: "Ubuntu", sans-serif;
+  --font-serif-accent: "PT Serif", serif;
 
   font-family: var(--font-body);
   line-height: 1.6;
@@ -100,6 +102,16 @@
   font-family: var(--font-headline);
   font-weight: 400;
   letter-spacing: -0.02em;
+}
+
+/* Ubuntu utility */
+.font-ubuntu {
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* PT Serif utility */
+.font-pt-serif {
+  font-family: "PT Serif", serif;
 }
 
 /* Smooth scroll */

@@ -4,38 +4,35 @@ export default function Hero() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative min-h-screen flex items-center bg-green-50">
-      <div
-        className="absolute inset-0 opacity-[0.1] pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-        }}
-      />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-40">
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-center">
-          {/* Text Column - Asymmetric placement */}
+    <section className="relative min-h-screen flex items-center bg-green-50 font-ubuntu">
+      <div className="absolute opacity-12 top-15 inset-0 bg-[url('/bg.png')] bg-cover bg-center" />
+      <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-8 py-32 lg:py-40">
+        <div className="flex items-center gap-16 lg:gap-24">
           <div className="lg:col-span-7 space-y-8">
-            {/* Eyebrow */}
-            <p className="text-sm tracking-widest uppercase text-[#64748B] font-medium">
+            <p className="text-sm text-center tracking-widest uppercase text-[#64748B] font-medium">
               Collective finance, reimagined
             </p>
-
-            {/* Headline - Editorial serif */}
-            <h1 className="font-headline text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.1] text-[#0F172A]">
-              Money moves when <br className="hidden lg:block" />
+            <h1 className="text-center text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.1] tracking-wide text-[#0F172A] font-normal">
+              Money{" "}
+              <span className="relative">
+                <span className="top-0 left-0 z-50 font-pt-serif italic">
+                  moves
+                </span>
+                <div className="absolute bottom-0 left-0 top-18 z-10 w-full rounded-2xl h-1.5 bg-green-500"></div>
+              </span>{" "}
+              when <br className="hidden lg:block" />
               everyone agrees.
             </h1>
 
             {/* Subtext - Warm, clear, no jargon */}
-            <p className="text-lg lg:text-xl text-[#475569] max-w-xl leading-relaxed font-light">
+            <p className="text-lg lg:text-xl text-center text-[#475569] max-w-xl leading-relaxed font-extralight">
               Trust is a shared wallet for groups who want transparency.
               Contributions are pooled, held securely, and only released when
               the community votes to approve.
             </p>
 
             {/* CTA - Bold and high-contrast */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col items-center justify-center sm:flex-row gap-4 pt-4">
               <button
                 onClick={() => navigate("/auth")}
                 className="px-8 py-4 cta-primary rounded-lg text-base btn-press"
@@ -84,79 +81,6 @@ export default function Hero() {
                 <span className="text-sm text-[#64748B]">
                   <span className="text-[#0F172A] font-semibold">$4.2M</span>{" "}
                   secured
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Visual Column - Payment-focused visualization */}
-          <div className="lg:col-span-5 relative">
-            {/* Abstract geometric composition */}
-            <div className="relative aspect-square max-w-md mx-auto lg:mx-0">
-              {/* Background circle - surface bg */}
-              <div className="absolute inset-8 rounded-full bg-[#F8FAFC]" />
-
-              {/* Overlapping elements suggesting consensus/agreement */}
-              <div className="absolute top-12 left-12 w-32 h-32 border-2 border-[#22C55E] rounded-full opacity-60" />
-              <div className="absolute top-20 left-20 w-32 h-32 border-2 border-[#22C55E] rounded-full opacity-40" />
-              <div className="absolute top-28 left-28 w-32 h-32 border-2 border-[#22C55E] rounded-full opacity-20" />
-
-              {/* Central element - the shared vault */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-48 h-48 bg-white rounded-2xl shadow-lg border border-[#E2E8F0] flex flex-col items-center justify-center gap-3 transform rotate-3 hover:rotate-0 transition-transform duration-700 wallet-card-hover">
-                  <div className="w-12 h-12 rounded-full bg-[#22C55E] flex items-center justify-center">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                      />
-                    </svg>
-                  </div>
-                  <span className="text-xs font-medium text-[#64748B] uppercase tracking-wider">
-                    Shared Vault
-                  </span>
-                  <span className="font-headline text-2xl text-[#0F172A]">
-                    $24,800
-                  </span>
-                  <span className="badge-available px-2 py-0.5 rounded-full text-xs font-medium">
-                    Secure
-                  </span>
-                </div>
-              </div>
-
-              {/* Floating indicator - transaction approved */}
-              <div className="absolute bottom-16 right-0 bg-white px-4 py-3 shadow-md rounded-lg border border-[#E2E8F0] flex items-center gap-3 animate-float">
-                <span className="status-dot status-dot-success" />
-                <span className="text-sm text-[#0F172A] font-medium">
-                  Vote approved
-                </span>
-              </div>
-
-              {/* Floating indicator - escrow info */}
-              <div
-                className="absolute top-8 right-8 bg-[#EFF6FF] px-3 py-2 rounded-lg border border-[#3B82F6]/20 flex items-center gap-2 animate-float"
-                style={{ animationDelay: "1s" }}
-              >
-                <svg
-                  className="w-4 h-4 text-black"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="text-xs text-black font-medium">
-                  Escrow active
                 </span>
               </div>
             </div>
