@@ -1,14 +1,16 @@
 import { useNavigate } from "react-router-dom";
+import HeroIcon from "../heroIcon";
 
 export default function Hero() {
   const navigate = useNavigate();
 
   return (
     <section className="relative min-h-screen flex items-center bg-green-50 font-ubuntu">
-      <div className="absolute opacity-12 top-15 inset-0 bg-[url('/bg.png')] bg-cover bg-center" />
+      <div className="absolute opacity-18 top-15 inset-0 bg-[url('/bg.png')] bg-cover bg-center" />
       <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-8 py-32 lg:py-40">
         <div className="flex items-center gap-16 lg:gap-24">
           <div className="lg:col-span-7 space-y-8">
+            {/* <HeroIcon icon={"/christy.jpg"} className="top-34 -left-10" /> */}
             <p className="text-sm text-center tracking-widest uppercase text-[#64748B] font-medium">
               Collective finance, reimagined
             </p>
@@ -35,7 +37,7 @@ export default function Hero() {
             <div className="flex flex-col items-center justify-center sm:flex-row gap-4 pt-4">
               <button
                 onClick={() => navigate("/auth")}
-                className="px-8 py-4 cta-primary rounded-lg text-base btn-press"
+                className="px-8 py-4 bg-[#5b7b67] text-green-500 rounded-lg text-base font-medium text-shadow-2xs btn-press"
               >
                 Start a Trust
               </button>
@@ -48,7 +50,7 @@ export default function Hero() {
             </div>
 
             {/* Social proof with trust signals */}
-            <div className="flex items-center gap-6 pt-6">
+            <div className="flex items-center justify-center gap-6 pt-6">
               <div className="flex items-center gap-2">
                 <div className="flex -space-x-2">
                   {[1, 2, 3, 4].map((i) => (

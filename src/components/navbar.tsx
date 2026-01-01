@@ -60,7 +60,7 @@ export default function Navbar() {
           </button>
           <button
             onClick={() => navigate("/auth")}
-            className="px-5 py-2.5 cta-primary rounded-lg text-sm btn-press"
+            className="px-5 py-2.5 bg-[#5b7b67] text-green-500 rounded-lg text-sm font-medium  text-shadow-2x cursor-pointer btn-press"
           >
             Get started
           </button>

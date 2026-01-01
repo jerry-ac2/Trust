@@ -69,7 +69,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="py-32 lg:py-40 bg-[#F8FAFC]">
+    <section id="how-it-works" className="py-32 lg:py-30 bg-stone-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header - Editorial style */}
         <div className="max-w-2xl mb-20">
