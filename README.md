@@ -10,7 +10,7 @@ A modern financial contribution platform built with React, TypeScript, and a pow
 | **TypeScript**                   | Type-safe JavaScript for better developer experience |
 | **Vite**                         | Blazing fast build tool and dev server               |
 | **Tailwind CSS**                 | Utility-first CSS framework for rapid UI development |
-| **Zustand**                      | Lightweight state management (simpler than Redux)    |
+| **Zustand**                      | Lightweight state management                         |
 | **TanStack Query (React Query)** | Server state management and data fetching            |
 | **React Router**                 | Client-side routing                                  |
 | **Axios**                        | HTTP client for API requests                         |
