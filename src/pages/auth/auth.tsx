@@ -8,7 +8,7 @@ export default function Auth() {
   return (
     <div className="min-h-screen bg-white flex">
       {/* Left Panel - Brand Statement */}
-      <div className="hidden lg:flex lg:w-1/2 bg-[#0F172A] text-white p-16 flex-col justify-between relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 bg-[#0F172A] text-white p-12 flex-col justify-between relative overflow-hidden">
         {/* Subtle grain texture */}
         <div
           className="absolute inset-0 opacity-[0.02] pointer-events-none"
@@ -19,24 +19,11 @@ export default function Auth() {
 
         {/* Logo */}
         <div className="relative z-10 flex items-center gap-2">
-          <div className="w-10 h-10 rounded-lg bg-[#22C55E] flex items-center justify-center">
-            <svg
-              className="w-5 h-5 text-white"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fillRule="evenodd"
-                d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
           <span className="font-headline text-3xl">Trust</span>
         </div>
 
         {/* Statement */}
-        <div className="relative z-10 max-w-md">
+        <div className="relative z-10 max-w-xl">
           <h1 className="font-headline text-4xl lg:text-5xl leading-[1.15] mb-8">
             Your money, protected by consensus.
           </h1>

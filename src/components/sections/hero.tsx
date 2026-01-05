@@ -6,10 +6,29 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center bg-green-50 font-ubuntu">
       <div className="absolute opacity-18 top-15 inset-0 bg-[url('/bg.png')] bg-cover bg-center" />
+      <img
+        src="/hero-svg/3dicons-wallet-iso-color.png"
+        alt=""
+        className="w-20 h-20 absolute top-35 right-60"
+      />
+      <img
+        src="/hero-svg/3dicons-target-dynamic-color.png"
+        alt=""
+        className="w-20 h-20 absolute top-32 left-65"
+      />
+      <img
+        src="/hero-svg/3dicons-locker-dynamic-color.png"
+        alt=""
+        className="w-12 h-12 absolute left-65"
+      />
+      <img
+        src="/hero-svg/3dicons-shield-dynamic-premium.png"
+        alt=""
+        className="w-12 h-12 absolute top-95 right-70"
+      />
       <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-8 py-32 lg:py-40">
         <div className="flex items-center gap-16 lg:gap-24">
           <div className="lg:col-span-7 space-y-8">
-            {/* <HeroIcon icon={"/christy.jpg"} className="top-34 -left-10" /> */}
             <p className="text-sm text-center tracking-widest uppercase text-[#64748B] font-medium">
               Collective finance, reimagined
             </p>

@@ -87,18 +87,18 @@ export default function Register({
 
         <button
           type="submit"
-          className="w-full h-14 cta-primary rounded-lg font-medium btn-press text-base"
+          className="w-full h-14 bg-[#5b7b67] text-[#FFFACD] cursor-pointer rounded-lg font-medium btn-press text-base"
         >
           Create account
         </button>
 
         <p className="text-xs text-[#64748B] text-center">
           By creating an account, you agree to our{" "}
-          <a href="#" className="text-[#22C55E] hover:underline">
+          <a href="#" className="text-[#5b7b67] hover:underline">
             Terms
           </a>{" "}
           and{" "}
-          <a href="#" className="text-[#22C55E] hover:underline">
+          <a href="#" className="text-[#5b7b67] hover:underline">
             Privacy Policy
           </a>
           .
@@ -108,7 +108,7 @@ export default function Register({
       {/* Trust signal */}
       <div className="flex items-center justify-center gap-2 text-xs text-[#64748B]">
         <svg
-          className="w-4 h-4 text-[#22C55E]"
+          className="w-4 h-4 text-[#5b7b67]"
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -126,7 +126,7 @@ export default function Register({
         Already have an account?{" "}
         <button
           onClick={() => setIsLogin(true)}
-          className="text-[#22C55E] font-medium hover:text-[#16A34A] transition-colors"
+          className="text-[#5b7b67] font-medium hover:text-[#16A34A] transition-colors"
         >
           Sign in
         </button>

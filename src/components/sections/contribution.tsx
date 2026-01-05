@@ -4,10 +4,10 @@ export default function Features() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
         <div className="max-w-2xl mb-20">
-          <p className="text-sm tracking-widest uppercase text-white font-xl mb-4">
+          <p className="text-sm tracking-widest uppercase text-stone-200 font-xl mb-4">
             Core features
           </p>
-          <h2 className="font-headline font-bold text-[clamp(3rem,7vw,3rem)] leading-[1.2] text-[#0F172A]">
+          <h2 className="font-normal text-[clamp(3rem,8vw,3rem)] uppercase leading-[1.2]">
             Built for groups who value transparency
           </h2>
         </div>

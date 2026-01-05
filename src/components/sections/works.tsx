@@ -5,21 +5,7 @@ export default function HowItWorks() {
       title: "Fund Wallet",
       description:
         "Members pool funds into a shared wallet. Every contribution is recorded, timestamped, and visible to all participants.",
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.5}
-            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-          />
-        </svg>
-      ),
+      icon: "/hero-svg/3dicons-wallet-front-premium.png",
       status: "Available",
     },
     {
@@ -27,21 +13,7 @@ export default function HowItWorks() {
       title: "Held in Escrow",
       description:
         "Funds are secured and cannot be withdrawn unilaterally. The system acts as a neutral third party, ensuring safety.",
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.5}
-            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-          />
-        </svg>
-      ),
+      icon: "/hero-svg/3dicons-locker-front-clay.png",
       status: "Locked",
     },
     {
@@ -49,27 +21,13 @@ export default function HowItWorks() {
       title: "Release Escrow",
       description:
         "When someone requests a withdrawal, the community votes. Funds release only when consensus is reached.",
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={1.5}
-            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      ),
+      icon: "/hero-svg/3dicons-tick-front-premium.png",
       status: "Approved",
     },
   ];
 
   return (
-    <section id="how-it-works" className="py-32 lg:py-30 bg-stone-50">
+    <section id="how-it-works" className="py-12 lg:py-10 bg-stone-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header - Editorial style */}
         <div className="max-w-2xl mb-20">
@@ -87,23 +45,17 @@ export default function HowItWorks() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="group bg-white p-8 rounded-xl border border-[#E2E8F0] card-lift"
+              className="group relative bg-white p-8 rounded-xl card-lift"
             >
               {/* Step number with icon */}
               <div className="flex items-center justify-between mb-6">
-                <span className="text-5xl font-headline text-[#E2E8F0] group-hover:text-[#22C55E] transition-colors duration-300">
+                <span className="text-5xl font-headline text-[#5b7b67] text-shadow-xs">
                   {step.number}
                 </span>
                 <div
-                  className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                    index === 0
-                      ? "bg-[#ECFDF3] text-[#5b7b67]"
-                      : index === 1
-                      ? "bg-[#EFF6FF] text-[#5b7b67]"
-                      : "bg-[#ECFDF3] text-[#5b7b67]"
-                  }`}
+                  className={`w-12 h-12 rounded-full flex items-center justify-center `}
                 >
-                  {step.icon}
+                  <img src={step.icon} className="h-10 w-10" alt="" />
                 </div>
               </div>
 
@@ -111,67 +63,13 @@ export default function HowItWorks() {
               <h3 className="text-xl font-medium text-[#0F172A] mb-3">
                 {step.title}
               </h3>
-              <p className="text-[#475569] leading-relaxed mb-4">
+              <p className=" relative text-[#475569] leading-relaxed mb-4">
                 {step.description}
               </p>
 
               {/* Status badge */}
-              <span
-                className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-                  step.status === "Available"
-                    ? "badge-available"
-                    : step.status === "Locked"
-                    ? "badge-escrow"
-                    : "badge-available"
-                }`}
-              >
-                {step.status === "Locked" && (
-                  <svg
-                    className="w-3 h-3 mr-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                )}
-                {step.status === "Approved" && (
-                  <svg
-                    className="w-3 h-3 mr-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                )}
-                {step.status}
-              </span>
-
-              {/* Arrow to next step (except last) */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10">
-                  <svg
-                    className="w-6 h-6 text-[#E2E8F0]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
-              )}
+              <div className="items-end absolute left-0 top-0 bottom-0 w-full h-1 bg-[#5b7b67]"></div>
+              <div className="items-end absolute left-0 bottom-0 w-full h-1 bg-[#5b7b67]"></div>
             </div>
           ))}
         </div>

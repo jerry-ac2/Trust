@@ -25,7 +25,7 @@ export default function Navbar() {
           className="cursor-pointer flex items-center gap-2 group"
           onClick={() => navigate("/")}
         >
-          <span className="font-headline text-2xl text-[#0F172A]">Trust</span>
+          <span className="font-headline text-2xl text-black">Trust</span>
         </div>
 
         {/* Navigation Links - Minimal */}

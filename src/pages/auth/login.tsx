@@ -67,7 +67,7 @@ export default function Login({
 
         <button
           type="submit"
-          className="w-full h-14 cta-primary rounded-lg font-medium btn-press text-base"
+          className="w-full h-14 bg-[#5b7b67] text-[#FFFACD] cursor-pointer rounded-lg font-medium btn-press text-base"
         >
           Sign in
         </button>
@@ -76,7 +76,7 @@ export default function Login({
       {/* Trust signal */}
       <div className="flex items-center justify-center gap-2 text-xs text-[#64748B]">
         <svg
-          className="w-4 h-4 text-[#22C55E]"
+          className="w-4 h-4 text-[#5b7b67]"
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -94,7 +94,7 @@ export default function Login({
         Don't have an account?{" "}
         <button
           onClick={() => setIsLogin(false)}
-          className="text-[#22C55E] font-medium hover:text-[#16A34A] transition-colors"
+          className="text-[#5b7b67] font-xs text-sm hover:text-[#16A34A] transition-colors"
         >
           Create one
         </button>
