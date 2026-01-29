@@ -21,7 +21,7 @@ export default function CTA() {
         {/* CTA - Primary actions */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <button
-            onClick={() => navigate("/auth")}
+            onClick={() => navigate("/welcome")}
             className="px-10 py-4 cta-primary rounded-lg text-base btn-press inline-flex items-center justify-center gap-2"
           >
             <svg
@@ -40,7 +40,7 @@ export default function CTA() {
             Create your Trust
           </button>
           <button
-            onClick={() => navigate("/auth/login")}
+            onClick={() => navigate("/welcome")}
             className="px-10 py-4 text-white text-base font-medium border border-[#475569] rounded-lg hover:border-white hover:bg-white/5 transition-all duration-200 btn-press"
           >
             Sign in

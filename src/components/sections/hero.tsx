@@ -54,7 +54,7 @@ export default function Hero() {
             {/* CTA - Bold and high-contrast */}
             <div className="flex flex-col items-center justify-center sm:flex-row gap-4 pt-4">
               <button
-                onClick={() => navigate("/auth")}
+                onClick={() => navigate("/welcome")}
                 className="px-8 py-4 bg-[#5b7b67] text-[#FFFACD] rounded-lg text-base font-medium text-shadow-2xs btn-press"
               >
                 Start a Trust
